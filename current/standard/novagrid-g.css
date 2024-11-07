@@ -341,6 +341,28 @@ p { margin-bottom: var(--nova-spacing-unit); }
   opacity: 1;
 }
 
+.nova-box-glow-proximity {
+  position: relative;
+  overflow: hidden;
+}
+
+.nova-box-glow-proximity::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 220, 130, 0.2) 0%, rgba(0, 220, 130, 0) 40%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.nova-box-glow-proximity.active::before {
+  opacity: 1;
+}
+
 .nova-input {
   display: block;
   width: 100%;
@@ -768,4 +790,97 @@ p { margin-bottom: var(--nova-spacing-unit); }
   0% { box-shadow: 0 0 0 0 rgba(0, 220, 130, 0.4); }
   70% { box-shadow: 0 0 0 10px rgba(0, 220, 130, 0); }
   100% { box-shadow: 0 0 0 0 rgba(0, 220, 130, 0); }
+}
+
+.nova-box-glow-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.nova-box-glow-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(0, 220, 130, 0.2) 0%,
+    rgba(0, 220, 130, 0) 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.nova-box-glow-hover:hover::before {
+  opacity: 1;
+}
+
+.nova-page-grid {
+  display: grid;
+  gap: var(--nova-spacing-unit);
+}
+
+@media (min-width: 640px) {
+  .nova-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nova-page-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.nova-page-columns {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--nova-spacing-unit) * -0.5);
+}
+
+.nova-page-column {
+  flex: 1 1 100%;
+  padding: calc(var(--nova-spacing-unit) * 0.5);
+}
+
+@media (min-width: 640px) {
+  .nova-page-column {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nova-page-column {
+    flex-basis: 33.333333%;
+  }
+}
+
+.nova-page-card {
+  background-color: var(--nova-surface);
+  border-radius: var(--nova-border-radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: var(--nova-transition);
+}
+
+.nova-page-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.nova-page-card-body {
+  padding: var(--nova-spacing-unit);
+}
+
+.nova-page-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.nova-page-card-text {
+  color: var(--nova-muted);
 }
