@@ -660,3 +660,104 @@ p { margin-bottom: var(--nova-spacing-unit); }
 .nova-dropdown-item:hover {
   background-color: var(--nova-muted);
 }
+
+.nova-btn-ghost {
+  color: var(--nova-text);
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nova-btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nova-btn-link {
+  color: var(--nova-primary);
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: underline;
+}
+
+.nova-btn-link:hover {
+  text-decoration: none;
+}
+
+.nova-box-glow {
+  border: 1px solid var(--nova-primary);
+  box-shadow: 0 0 10px rgba(0, 220, 130, 0.3);
+}
+
+.nova-box-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 220, 130, 0.5);
+}
+
+.nova-box-gradient {
+  background: linear-gradient(135deg, var(--nova-primary), var(--nova-accent));
+  color: var(--nova-background);
+}
+
+.nova-box-gradient:hover {
+  background: linear-gradient(135deg, var(--nova-accent), var(--nova-primary));
+}
+
+.nova-box-3d {
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.3s ease;
+}
+
+.nova-box-3d:hover {
+  transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+}
+
+.nova-box-scale {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.nova-box-scale:hover {
+  transform: scale(1.05);
+}
+
+.nova-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.nova-card-header {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nova-card-body {
+  flex-grow: 1;
+}
+
+.nova-card-footer {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nova-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.nova-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.nova-card-subtitle {
+  font-size: 0.875rem;
+  color: var(--nova-muted);
+  margin-bottom: 1rem;
+}
+
+.nova-card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nova-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
