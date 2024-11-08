@@ -1,3 +1,5 @@
+![NovaGrid](https://img.shields.io/badge/NovaGrid-1-blue) ![CSS](https://img.shields.io/badge/CSS-lila)
+
 This is the Repository for the Novagrid CSS Framework.
 Demo Website: https://caydendev.github.io/sites/novagrid-demo
 
